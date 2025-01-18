@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cinema Selection</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+    <style>
+        button:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-900 text-white font-sans">
+    <!-- Navbar -->
+    <div class="bg-transparent flex flex-wrap justify-between items-center border-b">
+        <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto">
+            <a href="./Home.html">
+                <img src="../images/movie-pass-11-16-2024.png" 
+                     alt="Movie Pass Logo" 
+                     class="w-32 h-12 sm:w-64 sm:h-20 object-fill mx-auto sm:mx-0 sm:flex sm:justify-center sm:align-bottom" />
+            </a>
+        </div>
+        <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto items-center">
+            <div>
+                <i class="fa-solid fa-location-dot text-white ml-2 mr-2 text-xl p-3"></i>
+            </div>
+            <div id="user-container">
+                <!-- User details or Sign In button will be dynamically injected here -->
+            </div>
+        </div>
+    </div>
+
+    <div class="container mx-auto px-4 py-8 bg-black">
+        <header class="text-center mb-8">
+            <h1 class="text-4xl font-bold movie-title">Movie Title</h1>
+            <p class="text-gray-400 text-lg movie-details">Details</p>
+        </header>
+
+        <main class="p-6 rounded-lg shadow-lg">
+            <div class="flex items-center gap-6 mb-8">
+                <img src="../assets/default-poster.jpg" alt="Movie Poster" class="w-48 h-auto rounded-lg shadow-md movie-poster">
+                <div>
+                    <h2 class="text-2xl font-semibold mb-2">Show Date</h2>
+                    <p class="text-gray-400 text-lg movie-date">Show Date</p>
+                </div>
+            </div>
+            <div id="theater-container" class="space-y-6"></div>
+        </main>
+    </div>
+
+    <script src="../js/CinemaSelection.js" type="module"></script>
+</body>
+</html>

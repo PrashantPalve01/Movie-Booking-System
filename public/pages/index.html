@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+</head>
+<body>
+    <h1>Welcome to Your Profile</h1>
+    <div id="userInfo">
+        <!-- User info will be displayed here -->
+        <p><strong>Full Name:</strong> <span id="fullname"></span></p>
+        <p><strong>Email:</strong> <span id="email"></span></p>
+    </div>
+    <button id="logoutBtn">Logout</button>
+
+    <script src="profile.js"></script>
+</body>
+</html>
+
+<script>
+    // Check if the user is logged in (data exists in localStorage)
+const user = JSON.parse(localStorage.getItem("user"));
+
+if (user) {
+    // Display user information on the profile page
+    document.getElementById("fullname").textContent = user.fullname;
+    document.getElementById("email").textContent = user.email;
+} else {
+    // If no user data is found, redirect to login page
+    alert("You are not logged in. Please log in first.");
+    window.location.href = "login.html";
+}
+
+// Logout functionality
+document.getElementById("logoutBtn").addEventListener("click", function() {
+    // Clear user data from localStorage and redirect to login page
+    localStorage.removeItem("user");
+    alert("You have logged out.");
+    window.location.href = "login.html";
+});
+
+</script>

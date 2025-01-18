@@ -1,0 +1,142 @@
+/* General Styling */
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    box-sizing: border-box;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.navbar img {
+    width: 8rem;
+    height: auto;
+}
+
+/* Responsive: Larger screens */
+@media (min-width: 768px) {
+    .navbar img {
+        width: 16rem;
+    }
+}
+
+/* Banner Section */
+.details-section {
+    padding: 1rem;
+    flex: 1 1 100%;
+    background-color: #000;
+    text-align: center;
+}
+
+.details-section h2 {
+    margin-bottom: 1rem;
+}
+
+.details-section .poster {
+    margin-bottom: 1rem;
+}
+
+/* Movie Details */
+.movie-details {
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.details-section .movie-title {
+    text-align: left;
+}
+
+/* Trailer Section */
+.trailer-section {
+    position: relative;
+    height: 15rem;
+    flex: 1 1 100%;
+    background: #000;
+    margin-top: 1rem;
+}
+
+.trailer-section iframe {
+    width: 100%;
+    height: 100%;
+}
+
+/* Responsive: Medium screens */
+@media (min-width: 768px) {
+    .details-section,
+    .trailer-section {
+        flex: 1;
+        height: auto;
+        margin: 0;
+    }
+
+    .details-section {
+        text-align: left;
+    }
+
+    .details-section .poster {
+        margin: 0;
+    }
+}
+
+/* Synopsis and Storyline Sections */
+section {
+    padding: 1.5rem;
+    margin: 0 auto;
+    max-width: 48rem;
+}
+
+section h3 {
+    margin-bottom: 1rem;
+}
+
+/* Buttons */
+button {
+    cursor: pointer;
+    padding: 0.75rem 1.5rem;
+    border: none;
+    font-size: 1rem;
+    font-weight: bold;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    opacity: 0.9;
+}
+
+/* Responsive: Large screens */
+@media (min-width: 1024px) {
+    .container {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: flex-start;
+    }
+
+    .details-section {
+        padding: 2rem;
+        flex: 1;
+    }
+
+    .trailer-section {
+        flex: 1;
+    }
+
+    section {
+        max-width: 64rem;
+        padding: 2rem;
+    }
+}

@@ -1,0 +1,200 @@
+
+/* Menu button and dropdown styles */
+
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+background-size: cover;
+background-position: center;
+min-height: 100vh;
+font-family: "Work Sans", sans-serif;
+}
+
+.menu-button {
+  font-size: 30px;
+  cursor: pointer;
+  color: white;
+  padding: 5px;
+}
+.menu-button:hover {
+  transform: scale(1.1);
+}
+
+.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100px;
+  right: -250px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+  width: 350px;
+  color: #333;
+  overflow: hidden;
+  opacity: 0;
+  transition: all 1s ease-in-out;
+  z-index: 1;
+}
+
+.dropdown-menu.show {
+  display: block;
+  opacity: 1;
+  transform: translateX(0);
+  right: 10px;
+}
+
+.menu-item {
+  display: flex;
+  align-items: center;
+  padding: 12px 15px;
+  border-bottom: 1px solid #ddd;
+  cursor: pointer;
+}
+
+.menu-item:last-child {
+  border-bottom: none;
+}
+
+.menu-item:hover {
+  background-color: #f2f2f2;
+}
+
+.icon {
+  font-size: 20px;
+  margin-right: 10px;
+  color: #757070;
+}
+
+.menu-title {
+  flex-grow: 1;
+}
+
+.arrow {
+  color: #aaa;
+}
+
+/* Glassmorphism effect styles */
+.glass-card {
+background: rgba(255, 255, 255, 0.1);
+backdrop-filter: blur(10px);
+border-radius: 12px;
+border: 1px solid rgba(255, 255, 255, 0.2);
+padding: 20px;
+box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.image-container img {
+filter: none; 
+}
+.glass-card:hover {
+transform: scale(1.05);
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3); 
+}
+
+/* Container for the background image section */
+.background-image-section {
+position: relative;
+width: 100%;
+height: 100vh; /* Full viewport height */
+overflow: hidden;  /* Ensures no overflow of the image */
+}
+
+/* Create a wrapper for the image */
+.background-image-section .img-wrap {
+position: relative;
+width: 100%;
+height: 100%;
+}
+
+/* Create the fading effect: Gradually disappear into the background */
+.background-image-section .img-wrap:before {
+content: '';
+background-image: linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0)); /* Dark gradient from bottom to transparent */
+position: absolute;
+bottom: 0; /* Start at the bottom of the container */
+left: 0;
+right: 0;
+height: 50%; /* This will control how much of the image fades */
+z-index: 1; /* Ensure the gradient is on top of the image */
+}
+
+/* Ensure the image stays inside the wrapper and is responsive */
+.background-image-section .img-wrap img {
+width: 100%;         /* Makes the image stretch to fill the width of the container */
+height: 100%;        /* Makes sure the image covers the entire container */
+display: block;      /* Prevents any unwanted spacing below the image */
+object-fit: cover;   /* Ensures the image covers the container while maintaining aspect ratio */
+position: relative;
+z-index: 0; /* Keeps the image behind the gradient */
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+.background-image-section {
+    background-position: center top; /* Focus the image on top for smaller screens */
+}
+}
+
+/* For large screens */
+@media (min-width: 1200px) {
+.background-image-section {
+    background-position: center; /* Keep image centered for large screens */
+}
+}
+
+
+
+
+/* Transparent Search Bar */
+#search-content {
+  background-color: rgba(0, 0, 0, 0.3); /* Transparent background */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Light border */
+  color: white; /* Text color */
+  padding: 12px; /* Padding for better user experience */
+  font-size: 1rem;
+  border-radius: 8px;
+  outline: none; /* Remove default outline */
+  transition: background-color 0.3s ease;
+}
+
+#search-content:focus {
+  background-color: rgba(0, 0, 0, 0.5); /* Darken background on focus */
+  border-color: rgba(255, 255, 255, 0.7); /* Darker border on focus */
+}
+
+/* Dark Select Dropdown */
+select {
+  background-color: rgba(0, 0, 0, 0.7); /* Dark background for select */
+  color: white; /* Text color */
+  border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+  padding: 10px;
+  font-size: 1rem;
+  border-radius: 8px;
+  outline: none; /* Remove default outline */
+  transition: background-color 0.3s ease;
+}
+
+select:focus {
+  background-color: rgba(0, 0, 0, 0.9); /* Darker background on focus */
+  border-color: rgba(255, 255, 255, 0.5); /* Darker border on focus */
+}
+
+select option {
+  background-color: rgba(0, 0, 0, 0.8); /* Dark background for options */
+  color: white ; /* Text color for options */
+}
+
+/* Reset button styling */
+#reset-filters {
+  background-color: #d9534f; /* Red background */
+  color: white; /* White text */
+  padding: 10px 20px; /* Padding for the button */
+  border-radius: 8px; /* Rounded corners */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#reset-filters:hover {
+  background-color: #c9302c; /* Darker red when hovered */
+}

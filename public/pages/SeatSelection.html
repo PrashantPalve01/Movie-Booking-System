@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Movie Booking</title>
+  <link  href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.css" />
+  <style>
+    button:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body class="bg-black text-white">
+  
+  <!-- navbar  -->
+  <div class="bg-transparent flex flex-wrap justify-between items-center border-b">
+    <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto">
+        <a href="./Home.html">
+            <img src="../images/movie-pass-11-16-2024.png" 
+                 alt="Movie Pass Logo" 
+                 class="w-32 h-12 sm:w-64 sm:h-20 object-fill mx-auto sm:mx-0 sm:flex sm:justify-center sm:align-bottom" />
+        </a>
+    </div>
+    <div class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto items-center">
+        <div>
+            <i class="fa-solid fa-location-dot text-white ml-2 mr-2 text-xl p-3"></i>
+        </div>
+        <div id="user-container">
+            <!-- User details or Sign In button will be dynamically injected here -->
+        </div>
+    </div>
+</div>
+
+  <div class="min-h-screen flex flex-col items-center py-10">
+    <!-- Header -->
+    <header class="text-center">
+      <h1 class="text-3xl font-bold movie-title"></h1>
+      <p class="text-sm mt-1 movie-details"></p>
+    </header>
+
+    <!-- Main Content -->
+    <div class="mt-10 flex flex-wrap lg:flex-nowrap items-start justify-center gap-10 w-full px-4">
+      <!-- Movie Poster -->
+      <div class="flex-shrink-0">
+        <img src="" alt="A Silent Voice Poster" class="w-72 h-auto rounded-lg shadow-lg movie-poster">
+      </div>
+
+      <!-- Booking Section -->
+      <div class="w-full max-w-lg">
+        <!-- Screening Time -->
+        <div class="mb-8">
+          <h2 class="text-xl font-semibold mb-4">Show Timing</h2>
+          <span class="px-4 py-2 bg-gray-800 rounded-lg hover:bg-blue-600 show-timing">9:00 AM</span>
+        </div>
+
+        <!-- Seat Selection -->
+        <div>
+          <h2 class="text-xl font-semibold mb-4">Pick Your Seats</h2>
+            <!-- Dynamically Generated Seats -->
+            <div id="seats" class="grid grid-cols-10 gap-2"></div>
+          
+        </div>
+
+        <!-- Book Tickets Button -->
+        <div class="mt-8 text-center">
+          <button id="bookBtn" class="px-6 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700">
+            Book Tickets
+          </button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+  <script src="../js/SeatSelection.js" type="module">
+
+  </script>
+</body>
+</html>

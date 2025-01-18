@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Detail Page</title>
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        .navbar-custom {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .details-section {
+            background-color: black;
+        }
+        .movie-rating-section {
+            background-color: #2c2c2c;
+            border-radius: 8px;
+            padding: 10px 20px;
+        }
+    </style>
+</head>
+<body class="bg-black text-white">
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent navbar-custom">
+        <div class="container-fluid">
+            <a href="./Home.html" class="navbar-brand">
+                <img src="../images/movie-pass-11-16-2024.png" alt="Movie Pass Logo" class="img-fluid" style="max-height: 60px;">
+            </a>
+            <div class="d-flex align-items-center">
+                <div class="me-3">
+                    <i class="fa-solid fa-location-dot text-white fs-4"></i>
+                </div>
+                <div id="user-container">
+                    <!-- User name or login button will be dynamically rendered here -->
+                </div>
+            </div>
+            
+        </div>
+    </nav>
+
+    <!-- Banner Section -->
+    <section class="border-bottom">
+        <div class="container">
+            <div class="row align-items-start">
+                <!-- Movie Details Section -->
+                <div class="col-lg-6 py-4 px-3 details-section">
+                    <div class="row g-4 align-items-start">
+                        <!-- Poster -->
+                        <div class="col-12 col-md-5 poster">
+                            <img src="" alt="Movie Poster" class="img-fluid rounded poster">
+                        </div>
+
+                        <!-- Movie Details -->
+                        <div class="col-12 col-md-7 ">
+                            <h2 class="fw-bold movie-title">Movie Title</h2>
+                            <div class="movie-rating-section d-flex align-items-center mb-3">
+                                <span class="text-warning fs-4 me-2">
+                                    <i class="fa-solid fa-star"></i>
+                                </span>
+                                <span class="movie-rating fs-5">8.5</span>
+                                <span class="text-muted fs-6 ms-2">(Votes)</span>
+                                <button class="btn btn-light btn-sm ms-3">Rate Now <i class="fa-regular fa-thumbs-up"></i></button>
+                            </div>
+                            <div class="mb-3">
+                                <span class="badge bg-light text-dark quality me-2"></span>
+                                <span class="badge bg-light text-dark movie-language"></span>
+                            </div>
+                            <p class="movie-details "></p>
+                            <button class="btn btn-danger mt-3" id="book_ticket">
+                                Book Tickets <i class="fa-solid fa-ticket"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Trailer Section -->
+                <div class="col-lg-6 p-0">
+                    <div class="trailer-section ratio ratio-16x9">
+                        <!-- <iframe src="" title="Movie Trailer" allowfullscreen ></iframe> -->
+                        <iframe src=""
+                        title="Movie Trailer"
+                        class="absolute top-0 left-0 w-full h-full"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        frameborder="0" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Synopsis Section -->
+    <section class="py-4">
+        <div class="container">
+            <h3 class="fw-bold">Synopsis</h3>
+            <p class="movie-synopsis"></p>
+        </div>
+    </section>
+
+    <!-- Storyline Section -->
+    <section class="py-4">
+        <div class="container">
+            <h3 class="fw-bold">Storyline</h3>
+            <p class="movie-storyLine"></p>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../js/movie_detail.js" type="module"></script>
+</body>
+</html>

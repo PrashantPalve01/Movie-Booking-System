@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Booking</title>
+    <link rel="stylesheet" href="../CSS/home.css" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.css"
+    />
+  </head>
+  <body class="bg-cover bg-center bg-black">
+    <div class="main">
+      <div class="container mx-auto px-4">
+        <!-- Nav-Bar -->
+        <div class="bg-transparent flex flex-wrap justify-between items-center">
+          <!-- Left side (logo + search input) -->
+          <div
+            class="flex flex-col items-center sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto"
+          >
+            <img
+              src="../images/movie-pass-11-16-2024.png"
+              alt="Movie Pass Logo"
+              class="w-32 h-12 sm:w-64 sm:h-20 object-fill mx-auto sm:mx-0 sm:flex sm:justify-center"
+              onclick="window.location.href=window.location.href;"
+            />
+            <input
+              id="search-content"
+              type="text"
+              placeholder="Search movie title"
+              aria-label="Search for movie title"
+              class="p-2 w-full sm:w-96 md:w-96 h-10 rounded-lg border border-gray-300 mt-5 sm:mt-0"
+            />
+          </div>
+
+          <!-- Right side (Sign In and Location dropdown) -->
+          <div
+            class="flex flex-col sm:flex-row sm:space-x-4 mt-4 sm:mt-0 w-full sm:w-auto items-center"
+          >
+            <i
+              class="fa-solid fa-location-dot text-white ml-2 mr-2 text-xl p-3"
+            ></i>
+            <a href="./login.html">
+              <button class="text-white hover:bg-gray-800 p-2 rounded-md">
+                <i class="user fa-solid fa-user text-white ml-2 text-xl"></i>
+                Sign In
+              </button>
+            </a>
+          </div>
+        </div>
+
+        <!-- Header -->
+        <div class="background-image-section">
+          <div class="img-wrap">
+            <img
+              src="https://images.alphacoders.com/117/thumb-1920-1177950.jpg"
+              alt="Responsive Image"
+              class="w-full h-auto"
+            />
+          </div>
+        </div>
+
+        <!-- Contents Section -->
+        <div
+          class="w-full z-10 p-5 rounded-md bg-[url('../images/abstract-luxury-blur-dark-grey-black-gradient.jpg')]"
+        >
+          <div
+            class="space-y-4 flex flex-col md:flex-row justify-center gap-25 sm:gap-25 md:gap-40 lg:gap-48"
+          >
+            <!-- Language Dropdown -->
+            <div class="flex justify-center items-center w-full md:w-auto mt-4">
+              <label for="language-select" class="sr-only"
+                >Select Language</label
+              >
+              <select
+                id="language-select"
+                name="language"
+                class="text-white w-full sm:w-48 md:w-40 p-3 rounded-lg border bg-white/30 backdrop-blur-md text-black shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+                <option value="" hidden>Choose a language</option>
+                <option value="English">English</option>
+                <option value="Hindi">Hindi</option>
+              </select>
+            </div>
+
+            <!-- Genre Dropdown -->
+            <div class="flex justify-center items-center w-full md:w-auto">
+              <label for="genre-select" class="sr-only">Select Genre</label>
+              <select
+                id="genre-select"
+                name="genre"
+                class="text-white w-full sm:w-48 md:w-40 p-3 rounded-lg border bg-white/30 backdrop-blur-md text-black shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+                <option value="" hidden>Choose a genre</option>
+                <option value="action">Action</option>
+                <option value="comedy">Comedy</option>
+                <option value="drama">Drama</option>
+                <option value="horror">Horror</option>
+              </select>
+            </div>
+
+            <!-- Format Dropdown -->
+            <div class="flex justify-center items-center w-full md:w-auto">
+              <label for="format-select" class="sr-only">Select Format</label>
+              <select
+                id="format-select"
+                name="format"
+                class="text-white w-full sm:w-48 md:w-40 p-3 rounded-lg border bg-white/30 backdrop-blur-md text-black shadow-lg focus:outline-none focus:ring-2 focus:ring-blue-400"
+              >
+                <option value="" hidden>Choose a format</option>
+                <option value="HD">HD</option>
+                <option value="4K">4K</option>
+                <option value="imax">IMAX</option>
+                <option value="standard">Standard</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Reset Filters Button -->
+          <div class="flex justify-center mt-4">
+            <button
+              id="reset-filters"
+              class="bg-red-500 text-white p-2 rounded-lg hover:bg-red-700"
+            >
+              Reset Filters
+            </button>
+          </div>
+
+          <p class="text-2xl text-white font-semibold mb-6">
+            Movies <i class="fa-solid fa-film"></i>
+          </p>
+
+          <!-- Grid for Movie Cards -->
+          <div
+            id="movieGrid"
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4"
+            role="status"
+            aria-hidden="true"
+          >
+            <!-- Movie cards will be dynamically added here -->
+          </div>
+
+          <!-- No movies found message -->
+          <div id="no-movies-message" class="text-center text-white hidden">
+            <p>No movies available for the selected filters.</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Mini Footer Section -->
+      <div class="mx-auto px-28 py-8 text-white">
+        <div class="container mx-auto text-center">
+          <p class="text-lg font-semibold mb-4">
+            Enjoy Online Ticket Booking for Movies
+          </p>
+          <p class="text-sm mb-4">
+            If you are planning for movie ticket bookings for the latest
+            movies...
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script src="../js/home.js" type="module"></script>
+    <script
+      src="https://kit.fontawesome.com/5422a0d9bf.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-notify@1.0.4/dist/simple-notify.min.js"></script>
+  </body>
+</html>
