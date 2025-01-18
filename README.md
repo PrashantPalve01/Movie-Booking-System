@@ -85,15 +85,10 @@ movie-booking-system/
    cd Movie-Booking-System
    ```
 
-3. **Install Dependecies**:
-
+3. **Run the Project**:
    ```bash
-   npm install
-   ```
-
-4. **Run the Project**:
-   ```bash
-   npm run dev
+   1. Install the Live Server extension in VS Code.
+   2. Right-click on the index.html file and select "Open with Live Server".
    ```
 
 ---
